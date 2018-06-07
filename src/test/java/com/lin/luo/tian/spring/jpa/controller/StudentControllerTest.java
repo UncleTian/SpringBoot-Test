@@ -1,12 +1,11 @@
 package com.lin.luo.tian.spring.jpa.controller;
 
-import static org.junit.Assert.*;
-
 import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -19,6 +18,14 @@ import com.lin.luo.tian.spring.jpa.domain.Student;
 public class StudentControllerTest {
 	@Autowired
 	private StudentController studentController;
+	@Value("${myname:xyxyxyx}")
+	private String name;
+	
+	@Test
+	public void testName() {
+	    System.out.println("-----------------------------");
+	    System.out.println(name);
+	}
 	
 	@Test
 	public void test() {
